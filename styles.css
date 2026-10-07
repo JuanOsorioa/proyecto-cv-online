@@ -1,0 +1,153 @@
+/* =========================================
+   RESETEO BÁSICO Y TIPOGRAFÍA
+   ========================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* Fuente serif típica de los wireframes y navegadores básicos */
+    font-family: 'Times New Roman', Times, serif; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Para que el footer siempre esté abajo */
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* =========================================
+   HEADER (Iconos de GitHub y Perfil)
+   ========================================= */
+header {
+    padding: 20px 40px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between; /* Separa los botones a los extremos */
+    align-items: center;
+}
+
+.nav-icon {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #000;
+    border-radius: 50%; /* Hace los botones redondos */
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: bold;
+    color: #000;
+    font-size: 0; /* Ocultamos el texto original del HTML */
+}
+
+/* Añadimos pseudo-elementos para simular los iconos visualmente */
+.nav-github::before {
+    content: "🐙"; /* Puedes cambiar esto por una imagen SVG luego */
+    font-size: 20px;
+}
+.nav-profile::before {
+    content: "👤"; 
+    font-size: 20px;
+}
+
+/* =========================================
+   MAIN (Títulos y Carrusel)
+   ========================================= */
+main {
+    flex: 1; /* Ocupa todo el espacio restante */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: normal;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+/* Fuerza el subrayado a mostrarse en una línea nueva como en la imagen */
+h1 u {
+    display: block; 
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    margin-bottom: 40px;
+}
+
+/* Contenedor del Carrusel */
+.carrusel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px; /* Separación entre botones y el cuadro central */
+    width: 100%;
+}
+
+/* Cuadro central del carrusel */
+.carrusel-pantalla {
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    border: 2px solid #000000;
+    background-color: #ffffff;
+}
+
+/* Botones de flechas (izquierda y derecha) */
+.carrusel-btn {
+    width: 40px;
+    height: 40px;
+    background-color: #d3d3d3; /* Gris claro como en la imagen */
+    border: 1px solid #000000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #000;
+}
+
+.carrusel-btn:hover {
+    background-color: #b0b0b0; /* Efecto hover sutil */
+}
+
+/* =========================================
+   FOOTER (Copyright y Contacto)
+   ========================================= */
+footer {
+    background-color: #f0f0f0; /* Fondo gris claro */
+    padding: 15px 40px;
+    display: grid;
+    /* Grid de 3 columnas: Espacio vacío | Texto centrado | Enlace a la derecha */
+    grid-template-columns: 1fr auto 1fr; 
+    align-items: center;
+    font-size: 1rem;
+}
+
+.footer-copyright {
+    grid-column: 2; /* Fuerza a que quede exactamente en el centro */
+    text-align: center;
+}
+
+.footer-contacto {
+    grid-column: 3;
+    text-align: right;
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-contacto:hover {
+    text-decoration: underline;
+}
